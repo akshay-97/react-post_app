@@ -27,5 +27,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "This is just an application to learn<br>\r To post something when you submit using React.js",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Daanvirsingh/facebook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Daanvirsingh/facebook/issues"
+  },
+  "homepage": "https://github.com/Daanvirsingh/facebook#readme"
 }
