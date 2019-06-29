@@ -11,8 +11,12 @@ class App extends Component {
     };
   }
 
-  addPost = (a,b) => {
-
+  addPost = (t,p) => {
+    const record={title: t, post: p};
+    this.setState({
+      input: [...this.state.input,record]
+    })
+    
   };
 
   render() {

@@ -24,7 +24,7 @@ class Posts extends Component {
               </div>
             </div>
 
-            <PostsItem/>
+            <PostsItem post={this.props.post}/>
           </div>
         </div>
       </div>
