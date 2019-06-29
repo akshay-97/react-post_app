@@ -23,8 +23,10 @@ class Posts extends Component {
                 <p class="page-header lead">Blog list example for Bootstrap</p>{" "}
               </div>
             </div>
-
-            <PostsItem post={this.props.post}/>
+            {this.props.post.map((i)=>{
+                return <PostsItem postitem={i}/>;
+            })}
+            
           </div>
         </div>
       </div>
