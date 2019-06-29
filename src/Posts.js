@@ -24,7 +24,7 @@ class Posts extends Component {
               </div>
             </div>
             {this.props.post.map((i)=>{
-                return <PostsItem postitem={i}/>;
+                return <PostsItem postitem={i} deletePost={this.props.deletePost} />;
             })}
             
           </div>
