@@ -13,7 +13,7 @@ export default class Util_bar extends Component {
         return (
             <div className="row">
                 <div className="col-lg-1">
-                    <button className="btn btn-primary" onClick="">LIKE</button>
+                    <button className="btn btn-info" onClick="">LIKE</button>
                 </div>
                 <div className="col-lg-2">
                     <label>Add Comment</label>

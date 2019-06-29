@@ -1,15 +1,8 @@
 import React, { Component } from "react";
 import PostsItem from './PostsItem';
 
-class Posts extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      input: ""
-    };
-  }
+const Posts = (props) => {
 
-  render() {
     return (
       <div>
         <div class="container">
@@ -23,8 +16,8 @@ class Posts extends Component {
                 <p class="page-header lead">Blog list example for Bootstrap</p>{" "}
               </div>
             </div>
-            {this.props.post.map((i)=>{
-                return <PostsItem postitem={i} deletePost={this.props.deletePost} />;
+            {props.post.map((i)=>{
+                return <PostsItem postitem={i} deletePost={props.deletePost} />;
             })}
             
           </div>
@@ -32,6 +25,6 @@ class Posts extends Component {
       </div>
     );
   }
-}
+
 
 export default Posts;
