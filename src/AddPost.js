@@ -9,18 +9,19 @@ class AddPost extends Component {
     };
   }
 
-  change_t = e => {
-    this.setState({
+  change = e =>{
+    if(e.target.id==='in'){
+      this.setState({
+        title: e.target.value
+      });
+    }
+    else{
+      this.setState({
+        post: e.target.value
+      });
+    }
+  }
 
-      title: e.target.value
-    });
-  };
-  change_p = e => {
-    this.setState({
-    
-      post: e.target.value
-    });
-  };
   submit = () => {
     const { addPost } = this.props;
     const { title, post } = this.state;
@@ -34,33 +35,34 @@ class AddPost extends Component {
   render() {
     return (
       <div>
-        <div class="container">
-          <div class="row" id="row_style">
-            <h4 class="text-center col-sm-12">Submit new post</h4>
-            <div class="col-md-3   col-md-offset-4" />
-            <div class="col-md-6   col-md-offset-4">
-              <div class="form-group">
+        <div className="container">
+          <div className="row" id="row_style">
+            <h4 className="text-center col-sm-12">Submit new post</h4>
+            <div className="col-md-3   col-md-offset-4" />
+            <div className="col-md-6   col-md-offset-4">
+              <div className="form-group">
                 <input
                   type="text"
+                  id="in"
                   value={this.state.title}
-                  class="form-control"
+                  className="form-control"
                   placeholder="Title"
-                  onChange={this.change_t}
+                  onChange={this.change}
                 />
               </div>
               <textarea
                 value={this.state.post}
-                onChange={this.change_p}
-                id="editor"
-                class="form-control"
+                onChange={this.change}
+                id="pt"
+                className="form-control"
                 cols="40"
                 rows="6"
                 placeholder="What's on your mind?"
               />
               <br />
-              <div class="form-group">
+              <div className="form-group">
                 <button
-                  class="btn btn-primary display-block"
+                  className="btn btn-primary display-block"
                   id="submit"
                   onClick={this.submit}
                 >
