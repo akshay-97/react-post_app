@@ -8,7 +8,11 @@ class PostsItem extends Component {
 
     };
   }
-
+  time = () =>{
+    const d= new Date();
+    const t= Date.parse(d);
+    return `${((t-this.props.postitem.id-(t-this.props.postitem.id)%60000))/6000} minutes ago`
+  }
   
   render() {
     return (
@@ -20,7 +24,7 @@ class PostsItem extends Component {
         </div>
         <div class="col-sm-2">
           <span class="label label-default label-arrow label-arrow-right pull-right">
-            1 Hour Ago
+            {this.time()}
           </span>
         </div>
         <div class="col-sm-10">
