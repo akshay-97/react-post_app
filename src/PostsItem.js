@@ -1,16 +1,21 @@
 import React, { Component } from "react";
 
+
 class PostsItem extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+
+    };
   }
 
+  
   render() {
     return (
       <div class="row">
         <div class="col-sm-12">
           <h4>{this.props.postitem.title}</h4>
+          <button className="btn btn-danger" onClick={this.props.deletePost.bind(this,this.props.postitem.id)}>Delete</button> 
           <hr />
         </div>
         <div class="col-sm-2">

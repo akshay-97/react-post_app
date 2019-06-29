@@ -19,12 +19,21 @@ class App extends Component {
     
   };
 
+  deletePost= (id) =>{
+    let temp=this.state.input.filter((post)=>{
+      return post.id===id
+    }) 
+    this.setState({
+      input:temp
+  });
+    
+  }
   render() {
     return (
       <div>
         <Navbar />
         <AddPost addPost={this.addPost}/>
-        <Posts post={this.state.input}/>
+        <Posts post={this.state.input} deletePost={this.deletePost}/>
 
       </div>
     );
