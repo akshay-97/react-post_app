@@ -16,7 +16,7 @@ class App extends Component {
     const id=Date.parse(ti);
     const record={id,title,post};
     this.setState({
-      input: [record,...this.state.input]
+      input: [...this.state.input,record]
     })
     
   };

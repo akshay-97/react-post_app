@@ -1,11 +1,11 @@
 import React, { Component } from "react";
-import Util_bar from "./Util_bar";
+import UtilBar from "./UtilBar";
 
 class PostsItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      key : new Date()
     };
   }
   time = () =>{
@@ -26,12 +26,12 @@ class PostsItem extends Component {
           <span className="label label-default label-arrow label-arrow-right pull-right">
             {this.time()}
           </span>
-          <button className="btn btn-danger" onClick={this.props.deletePost.bind(this,this.props.postitem.id)}>Delete</button> 
+          <button className="btn btn-danger btn-sm" onClick={this.props.deletePost.bind(this,this.props.postitem.id)}>Delete</button> 
         </div>
         <div className="col-sm-10">
           <p>{this.props.postitem.post}</p>
          
-          <Util_bar/>
+          <UtilBar key={this.state.key}/>
         </div>
       </div>
     );
