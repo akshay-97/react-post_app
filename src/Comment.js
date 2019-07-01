@@ -2,9 +2,8 @@ import React from "react";
 import CommentItem from "./CommentItem";
 const Comment = props => {
   return (
-    
       <div>
-        {props.comment.map(i => {
+        {props.comments.map(i => {
           return <CommentItem commentitem={i} />;
         })}
       </div>

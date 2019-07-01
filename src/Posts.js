@@ -13,11 +13,11 @@ const Posts = (props) => {
                 <h1>
                   <i class="glyphicon glyphicon-asterisk" /> posts
                 </h1>
-                <p class="page-header lead">Blog list example for Bootstrap</p>{" "}
+                
               </div>
             </div>
             {props.post.map((i)=>{
-                return <PostsItem postitem={i} post={props.post} deletePost={props.deletePost} likes={this.props.likes}/>;
+                return <PostsItem postitem={i} deletePost={props.deletePost} likes={props.likes}  addComments={props.addComments}/>;
             })}
             
           </div>

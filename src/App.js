@@ -15,19 +15,38 @@ class App extends Component {
     const ti = new Date();
     const id=Date.parse(ti);
     
-    const record={id,title,post};
+    const record={id,title,post,counter:0,comments:[]};
     this.setState({
       input: [record,...this.state.input]
     })
     
   };
 
-  likes = (id,counter) =>{
-    let obj=this.state.input.filter((post)=>{
-      return id===post.id
-    });
-    obj.counter=counter;
+  likes = (id) =>{
+    let obj=[...this.state.input]; 
+    for(let i=0;i<this.state.input.length;i++)
+    {
+       if(obj[i].id===id){
+         obj[i].counter ++;
+       }
+    }
 
+      this.setState({
+        input:obj
+      });
+
+  }
+
+  addComments = (comment,id) =>{
+    let obj= [...this.state.input];
+    for(let i=0;i<this.state.input.length;i++){
+        if(obj[i].id===id){
+          obj[i].comments.push(comment);
+        }
+    }
+    this.setState({
+      input:obj
+    })
   }
 
   deletePost= (id) =>{
@@ -45,7 +64,7 @@ class App extends Component {
       <div>
         <Navbar />
         <AddPost addPost={this.addPost}/>
-        <Posts post={this.state.input} deletePost={this.deletePost} likes={this.likes}/>
+        <Posts post={this.state.input} deletePost={this.deletePost} likes={this.likes} addComments={this.addComments}/>
 
       </div>
     );

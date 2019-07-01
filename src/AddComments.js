@@ -4,7 +4,7 @@ class AddComments extends Component {
     constructor(props) {
         super(props);
         this.state = {
-          comment: ""
+          comment:""
         };
       }
     
@@ -18,10 +18,11 @@ class AddComments extends Component {
       }
     
       submit = () => {
-        const { addComment } = this.props;
-        const { comment} = this.state;
+        const addComments  = this.props.addComments ;
+        const {comment} = this.state;
+        const id =this.props.id;
     
-        addComment(comment)
+        addComments(comment,id)
         this.setState({
           comment: ""
         });
@@ -30,8 +31,7 @@ class AddComments extends Component {
     return (
       <div className="col-lg-10">
         <div className="row">
-          <div className="col-lg-3">Comments</div>
-          <div className="col-lg-6 form-group w-100">
+          <div className="col-lg-9 form-group w-100">
             <input type="text" className="form-control" placeholder="enter comment" onChange={this.change} value={this.state.comment} />
           </div>
           <div className="col-lg-3">

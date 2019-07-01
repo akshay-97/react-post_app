@@ -5,8 +5,7 @@ class PostsItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key : [],
-      item : ""
+      
     };
   }
   time = () =>{
@@ -33,7 +32,7 @@ class PostsItem extends Component {
         <div className="col-sm-10">
           <p>{this.props.postitem.post}</p>
          
-          <UtilBar key={this.state.key} likes={this.props.likes}/>
+          <UtilBar postitem={this.props.postitem} likes={this.props.likes} addComments={this.props.addComments}/>
         </div>
       </div>
     );
