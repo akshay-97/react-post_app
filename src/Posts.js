@@ -17,7 +17,7 @@ const Posts = (props) => {
               </div>
             </div>
             {props.post.map((i)=>{
-                return <PostsItem postitem={i} deletePost={props.deletePost} />;
+                return <PostsItem postitem={i} post={props.post} deletePost={props.deletePost} likes={this.props.likes}/>;
             })}
             
           </div>

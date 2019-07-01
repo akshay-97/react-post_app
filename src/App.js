@@ -14,12 +14,21 @@ class App extends Component {
   addPost = (title,post) => {
     const ti = new Date();
     const id=Date.parse(ti);
+    
     const record={id,title,post};
     this.setState({
-      input: [...this.state.input,record]
+      input: [record,...this.state.input]
     })
     
   };
+
+  likes = (id,counter) =>{
+    let obj=this.state.input.filter((post)=>{
+      return id===post.id
+    });
+    obj.counter=counter;
+
+  }
 
   deletePost= (id) =>{
     let temp=this.state.input.filter((post)=>{
@@ -28,14 +37,15 @@ class App extends Component {
     this.setState({
       input:temp
   });
-    
-  }
+}
+  
+  
   render() {
     return (
       <div>
         <Navbar />
         <AddPost addPost={this.addPost}/>
-        <Posts post={this.state.input} deletePost={this.deletePost}/>
+        <Posts post={this.state.input} deletePost={this.deletePost} likes={this.likes}/>
 
       </div>
     );
