@@ -5,17 +5,16 @@ import Comment from "./Comment";
 export default class UtilBar extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-        
       counter: 0,
       comment: []
     };
   }
   addComment = comment => {
-    const ti = new Date();
-    const id = Date.parse(ti);
-    const record = { id,comment };
+ 
     this.setState({
+      counter: 0,
       comment: [comment, ...this.state.comment]
     });
   };
@@ -23,6 +22,7 @@ export default class UtilBar extends Component {
     this.setState({
       counter: this.state.counter + 1
     });
+    this.props.likes(this.state.counter)
   };
 
   render() {
@@ -35,8 +35,7 @@ export default class UtilBar extends Component {
         </div>
 
         <AddComments addComment={this.addComment} />
-        <Comment comment={this.state.comment}/>
-        
+        <Comment comment={this.state.comment} />
       </div>
     );
   }

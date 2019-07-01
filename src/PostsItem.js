@@ -5,12 +5,14 @@ class PostsItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      key : new Date()
+      key : [],
+      item : ""
     };
   }
   time = () =>{
     const d= new Date();
     const t= Date.parse(d);
+   
     return `${(t-this.props.postitem.id-(t-this.props.postitem.id)%60000)/60000} minutes ${((t-this.props.postitem.id)/1000)%60} seconds ago`
   }
   
@@ -31,7 +33,7 @@ class PostsItem extends Component {
         <div className="col-sm-10">
           <p>{this.props.postitem.post}</p>
          
-          <UtilBar key={this.state.key}/>
+          <UtilBar key={this.state.key} likes={this.props.likes}/>
         </div>
       </div>
     );
